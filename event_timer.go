@@ -49,7 +49,8 @@ func auditLoop(ctx context.Context) {
 func audit(ctx context.Context, writer *tabwriter.Writer) {
 	cred, err := azidentity.NewClientSecretCredential(config.GetTenantId(), config.GetClientId(), config.GetClientSecret(), nil)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintf(writer,err.Error())
+		return
 	}
 
 	client, err := graph.NewGraphServiceClientWithCredentials(cred, []string{"https://graph.microsoft.com/.default"})
