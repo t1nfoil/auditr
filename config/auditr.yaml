@@ -1,0 +1,25 @@
+# azure tenant id, client id and secret used to authenticate with microsoft graph api.
+tenantId: <tenant id>
+clientId: <client id>
+clientSecret: <client secret>
+
+# trimEntryAge is the time in seconds, from the current system time, that records in memory having timestamps that exceed the interval current time - trimEntryAge will be removed.
+trimEntryAge: 1800
+
+# how often to run the sign-in activity and the directory audit record request loop, in seconds.
+updateInterval: 300
+
+# add any sign-in error codes that are nuisance/noisy to filter them out from being written to the database.
+signInActivity:
+    skipErrorCodes:
+    - 700082
+    - 50173
+
+# database configuration options, at this time, sslmode is not supported.    
+database:
+    host: postgres-dev
+    port: 5432
+    user: postgres
+    password: password
+    dbName: audit
+    sslmode: disable
