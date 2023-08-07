@@ -1,1 +1,2 @@
-apikey: <openai/chatgpt API key>
+apikey: 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
+embedDocs: /home/andy/code/go/cligpt/embedDocs
